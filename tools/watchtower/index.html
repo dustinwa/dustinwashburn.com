@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchtower</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!-- Header -->
+	<header>
+		<div id="header-left">
+			<h1>Watchtower Station</h1>
+			<div id="date-time"></div>
+		</div>
+		<div id="header-right">
+			<!-- Alert Images -->
+			<img src="/images/earthquake_offline.jpg" alt="Earthquake Offline" id="earthquake-alert" class="alert-image" width="50" height="50">
+			<img src="/images/volcano_offline.jpg" alt="Volcano Offline" id="volcano-alert" class="alert-image" width="50" height="50">
+			<img src="/images/flood_offline.jpg" alt="Flood Offline" id="flood-alert" class="alert-image" width="50" height="50">
+			<img src="/images/hurricane_offline.jpg" alt="Hurricane Offline" id="hurricane-alert" class="alert-image" width="50" height="50">
+			<img src="/images/meteor_offline.jpg" alt="Meteor Offline" id="meteor-alert" class="alert-image" width="50" height="50">
+			<img src="/images/tide_offline.jpg" alt="Tide Offline" id="tide-alert" class="alert-image" width="50" height="50">
+			<!-- Hidden Alert Images -->
+			<img src="/images/earthquake_online.jpg" alt="Earthquake Online" class="alert-image hidden">
+			<img src="/images/earthquake_detected.jpg" alt="Earthquake Detected" class="alert-image hidden">
+			<img src="/images/earthquake_imminent.jpg" alt="Earthquake Imminent" class="alert-image hidden">
+			<img src="/images/volcano_online.jpg" alt="Volcano Online" class="alert-image hidden">
+			<img src="/images/volcano_imminent.jpg" alt="Volcano Imminent" class="alert-image hidden">
+			<img src="/images/flood_online.jpg" alt="Flood Online" class="alert-image hidden">
+			<img src="/images/flood_imminent.jpg" alt="Flood Imminent" class="alert-image hidden">
+			<img src="/images/hurricane_online.jpg" alt="Hurricane Online" class="alert-image hidden">
+			<img src="/images/hurricane_1.jpg" alt="Hurricane 1" class="alert-image hidden">
+			<img src="/images/hurricane_2.jpg" alt="Hurricane 2" class="alert-image hidden">
+			<img src="/images/hurricane_3.jpg" alt="Hurricane 3" class="alert-image hidden">
+			<img src="/images/hurricane_4.jpg" alt="Hurricane 4" class="alert-image hidden">
+			<img src="/images/hurricane_5.jpg" alt="Hurricane 5" class="alert-image hidden">
+			<img src="/images/meteor_online.jpg" alt="Meteor Online" class="alert-image hidden">
+			<img src="/images/meteor_imminent.jpg" alt="Meteor Imminent" class="alert-image hidden">
+			<img src="/images/tide_scheduled.jpg" alt="Tide Scheduled" class="alert-image hidden">
+			<img src="/images/tide_soon.jpg" alt="Tide Soon" class="alert-image hidden">
+			<img src="/images/tide_playing.jpg" alt="Tide Playing" class="alert-image hidden">
+		</div>
+	</header>
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- Weather Section -->
+        <section id="weather-data">
+            <h2>Weather</h2>
+            <!-- Meteoblue iframe widget -->
+            <div id="meteoblue-container" class="meteoblue-layout">
+                <div id="meteoblue-widget">
+                    <iframe src="https://www.meteoblue.com/en/weather/widget/three/windhoek_namibia_3352136?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright"
+                        frameborder="1" scrolling="NO" allowtransparency="true"
+                        sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
+                        style="width: 400px; height: 513px"></iframe>
+                </div>
+            </div>
+			<br>
+            <!-- OpenWeatherMap widget + text -->
+            <div id="widget-container" class="widget-layout">
+                <div id="openweathermap-widget-22"></div>
+                <div class="widget-text">
+                    <p id="sunrise">Sunrise: Loading...</p>
+                    <p id="sunset">Sunset: Loading...</p>
+                    <p id="wind">Wind: Loading...</p>
+                    <p id="pressure">Pressure: Loading...</p>
+                    <p id="precipitation">Precipitation: Loading...</p>
+                    <p id="humidity">Humidity: Loading...</p>
+                    <p id="uv-index">UV Index: Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Events -->
+        <section id="dynamic-events">
+            <h2>Natural Disasters</h2>
+            <!-- Earthquake Module -->
+            <div id="earthquake">
+                <h3>Significant Earthquakes (Past Week)</h3>
+                <ul id="earthquake-list">Loading earthquake data...</ul>
+            </div>
+			
+			<!-- Space Weather Module -->
+            <div id="space-weather">
+                <h3>Space Weather</h3>
+                <div id="space-weather-image">
+                    <img src="https://services.swpc.noaa.gov/images/swx-overview-small.gif" alt="Space Weather Overview">
+                </div>
+				
+                <!-- <div id="noaa-scales">Loading NOAA Scales...</div> -->
+				
+                <!-- Condensed Space Weather Advisory -->
+				<div id="advisory-outlook">
+					<h3>Advisory Outlook</h3>
+					<p><strong>Issued:</strong> <span id="advisory-issued">Loading...</span></p>
+					<h4>Summary</h4>
+					<ul id="advisory-summary-list">
+						<li>Loading...</li>
+					</ul>
+					<h4>Outlook</h4>
+					<ul id="advisory-outlook-list">
+						<li>Loading...</li>
+					</ul>
+				</div>
+				
+                <div id="space-alerts">Loading Space Weather Alerts...</div>
+            </div>
+        </section>
+
+        <!-- News & Sports -->
+        <section id="news-sports">
+            <h2>News & Sports</h2>
+            <div id="news-ticker">
+                <h3>U.S. Headlines</h3>
+                <p>Loading news...</p>
+            </div>
+            <div id="sports">
+                <h3>University of Alabama Football</h3>
+                <p id="playing-now">Loading...</p>
+                <p id="recent-game">Loading...</p>
+                <p id="upcoming-game">Loading...</p>
+            </div>
+			
+        </section>
+
+        <!-- Quick Links -->
+        <section id="quick-links">
+            <h2>Quick Links</h2>
+            <div>                
+				<p><a href="https://openweathermap.org/city/3352136">OpenWeather Windhoek</a></p>
+				<p><a href="https://www.meteoblue.com/en/weather/week/windhoek_namibia_3352136">Meteo Weather Namibia</a></p>
+				<p><a href="https://rsoe-edis.org/eventMap">Disaster Event Map</a></p>
+				<p><a href="https://weather.sofarocean.com/?plotQuantity=wave-height">Sofar Ocean Wave Height Map</a></p>
+				<p><a href="https://www.swpc.noaa.gov/communities/space-weather-enthusiasts-dashboard">NOAA Space Weather</a></p>
+				<p><a href="https://services.swpc.noaa.gov/text/3-day-forecast.txt">NOAA Space 3-day forecast</a></p>
+				<p><a href="https://www.espn.com/college-football/team/schedule/_/id/333/alabama-crimson-tide">AL Football</a></p>
+				<p><a href="https://www.flightradar24.com/-23.38,9.43/5">Flight Radar 24</a></p>
+				<p><a href="https://localhost">Placeholder 1</a></p>
+				<p><a href="https://localhost">Placeholder 2</a></p>
+				<p><a href="https://localhost">Placeholder 3</a></p>
+				<p><a href="https://rsoe-edis.org/eventMap">Disaster Event Map</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Powered by OpenWeather, USGS, NOAA, ESPN, and other APIs</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.8s ease-out 0.4s both;
+}
+
+/* Piano key styling - realistic piano appearance */
+.piano-key-white {
+  background: linear-gradient(to bottom, #ffffff 0%, #fefefe 3%, #fafafa 97%, #f5f5f5 100%);
+  box-shadow: 
+    inset 0 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.1),
+    inset 0 -6px 0 rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.piano-key-white::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1px 1px 0 0;
+}
+
+.piano-key-white:hover {
+  background: linear-gradient(to bottom, #fafafa 0%, #f5f5f5 3%, #f0f0f0 97%, #ebebeb 100%);
+}
+
+.piano-key-white:active,
+.piano-key-active {
+  background: linear-gradient(to bottom, #e8e8e8 0%, #e3e3e3 3%, #dedede 97%, #d8d8d8 100%);
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+.piano-key-black {
+  background: linear-gradient(to bottom, #0a0a0a 0%, #050505 30%, #000000 100%);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    inset 0 -4px 4px rgba(0, 0, 0, 0.7),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+}
+
+.piano-key-black::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 3px 3px 0 0;
+}
+
+.piano-key-black::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 3px 3px;
+}
+
+.piano-key-black:hover {
+  background: linear-gradient(to bottom, #2a2a2a 0%, #1f1f1f 30%, #151515 100%);
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.7),
+    inset 0 -4px 4px rgba(0, 0, 0, 0.7),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+.piano-key-black:active,
+.piano-key-black-active {
+  background: linear-gradient(to bottom, #000000 0%, #000000 30%, #000000 100%);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    inset 0 3px 6px rgba(0, 0, 0, 0.6);
+  transform: translateY(1px);
+}

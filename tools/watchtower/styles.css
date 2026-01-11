@@ -1,0 +1,175 @@
+/* General Reset */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: #0047ab;
+    color: white;
+    overflow: hidden; /* Prevent large content overflow */
+}
+
+#header-left {
+    text-align: left;
+    flex: 1;
+}
+
+#header-right {
+    display: flex;
+    gap: 10px; /* Add spacing between images */
+    flex-wrap: wrap; /* Ensure images wrap if too many */
+    justify-content: flex-end; /* Align to the right */
+}
+
+.alert-image {
+    max-width: 50px; /* Ensure images are not too large */
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional styling */
+}
+
+.hidden {
+    display: none !important; /* Ensure hidden elements are not visible */
+}
+
+
+
+/* Main Content */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - 4em); /* Leave 2em space on both sides */
+    margin: 1rem 2em; /* Add 2em margin to both sides */
+}
+
+section {
+    flex: 1;
+    min-width: 300px;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 600px; /* Limit the height of the columns */
+    overflow-y: auto; /* Add scrolling if content exceeds height */
+}
+
+/* Meteoblue Widget */
+.meteoblue-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* transform: scale(0.75); /* Reduce the size to 75% */
+    /* transform-origin: top left; /* Anchor the scaling */
+    max-width: 100%;
+}
+
+/* Weather Widget */
+.widget-layout {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between widget and text */
+}
+
+#openweathermap-widget-22 {
+    flex-shrink: 0;
+}
+
+.widget-text {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 1rem;
+    background-color: #0047ab;
+    color: white;
+    text-align: center;
+}
+
+/* Space Weather Section */
+#space-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+#space-weather img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+}
+
+#noaa-scales, #advisory-outlook, #space-alerts {
+    white-space: pre-wrap;
+    font-family: monospace;
+    background-color: #f9f9f9;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 1rem 0;
+    width: 100%;
+    overflow-x: auto;
+}
+
+#/* Space Weather */
+#space-weather {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#space-weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+#space-weather-overview img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#advisory-outlook {
+    flex: 1;
+    background-color: #f4f4f9;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#advisory-summary-list,
+#advisory-outlook-list {
+    margin: 0;
+    padding-left: 1.2em;
+}
+
+#advisory-summary-list li,
+#advisory-outlook-list li {
+    margin: 0.5em 0;
+}
