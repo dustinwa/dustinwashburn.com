@@ -3,10 +3,10 @@
 import Image from 'next/image'
 
 const socialLinks = [
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: '💼' },
-  { name: 'GitHub', url: 'https://github.com', icon: '💻' },
-  { name: 'SoundCloud', url: 'https://soundcloud.com', icon: '🎵' },
-  { name: 'Spotify', url: 'https://spotify.com', icon: '🎶' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/dustinwa/', icon: '💼' },
+  { name: 'GitHub', url: 'https://github.com/dustinwa', icon: '💻' },
+  { name: 'SoundCloud', url: 'https://soundcloud.com/dustin-washburn-643234832', icon: '🎵' },
+  { name: 'Spotify', url: 'https://open.spotify.com/user/12129718808', icon: '🎶' },
 ]
 
 export default function ProfileSidebar() {
@@ -26,7 +26,7 @@ export default function ProfileSidebar() {
       </div>
 
       {/* Social Links Grid */}
-      <div className="w-1/2 grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3">
         {socialLinks.map((link) => (
           <a
             key={link.name}
