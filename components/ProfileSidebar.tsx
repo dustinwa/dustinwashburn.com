@@ -14,19 +14,19 @@ export default function ProfileSidebar() {
     <aside className="flex flex-col p-6 border-l border-gray-200 bg-white" style={{ width: '30%', minHeight: 'calc(100vh - 60px)' }}>
       {/* Profile Photo */}
       <div className="mb-6">
-        <div className="w-full aspect-[4/3] bg-gray-100 border border-gray-300 relative overflow-hidden">
+        <div className="w-full aspect-[322/327] bg-gray-100 border border-gray-300 relative overflow-hidden">
           <Image
             src="/profile-photo.jpg"
             alt="Dustin Washburn"
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </div>
       </div>
 
       {/* Social Links Grid */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="w-1/2 grid grid-cols-2 gap-3">
         {socialLinks.map((link) => (
           <a
             key={link.name}
