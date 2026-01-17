@@ -6,7 +6,7 @@ const socialLinks = [
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/dustinwa/', icon: '💼' },
   { name: 'GitHub', url: 'https://github.com/dustinwa', icon: '💻' },
   { name: 'SoundCloud', url: 'https://soundcloud.com/dustin-washburn-643234832', icon: '🎵' },
-  { name: 'Spotify', url: 'https://open.spotify.com/user/12129718808', icon: '🎶' },
+  { name: 'Spotify', url: 'https://spotify.comhttps://open.spotify.com/user/12129718808', icon: '🎶' },
 ]
 
 export default function ProfileSidebar() {
